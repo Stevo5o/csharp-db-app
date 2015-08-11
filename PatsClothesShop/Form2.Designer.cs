@@ -38,8 +38,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.customerTableAdapter1 = new PatsClothesShop.PatClothesShopDataSetTableAdapters.CustomerTableAdapter();
             this.tableAdapterManager1 = new PatsClothesShop.PatClothesShopDataSetTableAdapters.TableAdapterManager();
-            this.butn_Add = new System.Windows.Forms.Button();
-            this.butn_Delete = new System.Windows.Forms.Button();
+            this.btn_Insert = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patClothesShopDataSet1)).BeginInit();
             this.SuspendLayout();
@@ -110,33 +110,33 @@
             this.tableAdapterManager1.CustomerTableAdapter = this.customerTableAdapter1;
             this.tableAdapterManager1.UpdateOrder = PatsClothesShop.PatClothesShopDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // butn_Add
+            // btn_Insert
             // 
-            this.butn_Add.Location = new System.Drawing.Point(33, 187);
-            this.butn_Add.Name = "butn_Add";
-            this.butn_Add.Size = new System.Drawing.Size(75, 23);
-            this.butn_Add.TabIndex = 5;
-            this.butn_Add.Text = "Add";
-            this.butn_Add.UseVisualStyleBackColor = true;
-            this.butn_Add.Click += new System.EventHandler(this.butn_Add_Click);
+            this.btn_Insert.Location = new System.Drawing.Point(33, 188);
+            this.btn_Insert.Name = "btn_Insert";
+            this.btn_Insert.Size = new System.Drawing.Size(75, 23);
+            this.btn_Insert.TabIndex = 5;
+            this.btn_Insert.Text = "Insert";
+            this.btn_Insert.UseVisualStyleBackColor = true;
+            this.btn_Insert.Click += new System.EventHandler(this.btn_Insert_Click);
             // 
-            // butn_Delete
+            // btn_Delete
             // 
-            this.butn_Delete.Location = new System.Drawing.Point(33, 226);
-            this.butn_Delete.Name = "butn_Delete";
-            this.butn_Delete.Size = new System.Drawing.Size(75, 23);
-            this.butn_Delete.TabIndex = 0;
-            this.butn_Delete.Text = "Delete";
-            this.butn_Delete.UseVisualStyleBackColor = true;
-            this.butn_Delete.Click += new System.EventHandler(this.butn_Delete_Click);
+            this.btn_Delete.Location = new System.Drawing.Point(33, 226);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(75, 23);
+            this.btn_Delete.TabIndex = 6;
+            this.btn_Delete.Text = "Delete";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.butn_Delete);
-            this.Controls.Add(this.butn_Add);
+            this.Controls.Add(this.btn_Delete);
+            this.Controls.Add(this.btn_Insert);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
@@ -163,7 +163,7 @@
         private PatClothesShopDataSetTableAdapters.CustomerTableAdapter customerTableAdapter1;
         private PatClothesShopDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.Button butn_Add;
-        private System.Windows.Forms.Button butn_Delete;
+        private System.Windows.Forms.Button btn_Insert;
+        private System.Windows.Forms.Button btn_Delete;
     }
 }

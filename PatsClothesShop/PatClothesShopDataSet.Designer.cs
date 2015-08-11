@@ -1051,6 +1051,11 @@ namespace PatsClothesShop.PatClothesShopDataSetTableAdapters {
         {
             throw new System.NotImplementedException();
         }
+
+        internal void InsertQuery(PatClothesShopDataSet.CustomerDataTable customerDataTable)
+        {
+            throw new System.NotImplementedException();
+        }
     }
     
     /// <summary>

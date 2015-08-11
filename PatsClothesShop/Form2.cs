@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Data.SqlClient;
+
 namespace PatsClothesShop
 {
     public partial class Form2 : Form
@@ -36,37 +38,46 @@ namespace PatsClothesShop
             customerTableAdapter1.Fill(patClothesShopDataSet1.Customer);
         }
 
-        private void butn_Add_Click(object sender, EventArgs e)
+        SqlConnection myConnection = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Stephen\Documents\VSProjects\csharp-db-app\PatsClothesShop\PatClothesShop.mdf;Integrated Security=True");
+
+        private void btn_Insert_Click(object sender, EventArgs e)
         {
-            // save changes to the dataset 
-            bindingSource1.EndEdit();
+            try
+            {
+                myConnection.Open();
+                Console.WriteLine("Connection"); ;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error");
+            }
 
-            int result = 0;
+            SqlCommand myCommand = new SqlCommand("INSERT INTO Customer (FirstName, LastName) " +
+                                     "Values ('SteJ', 'OConnor')", myConnection);
 
-            // return number of items updated
-            customerTableAdapter1.InsertQuery("Sandra", "ÓConnor");
+            myCommand.ExecuteNonQuery();
 
-            result = customerTableAdapter1.Update(patClothesShopDataSet1.Customer);            
-
-            // display the row has been updated
-            MessageBox.Show(result.ToString());
-            
+            try
+            {
+                SqlDataReader myReader = null;
+                SqlCommand myCommandSel = new SqlCommand("SELECT * FROM Customer",
+                                                         myConnection);
+                myReader = myCommandSel.ExecuteReader();
+                while (myReader.Read())
+                {
+                    Console.WriteLine(myReader["FirstName"].ToString());
+                    Console.WriteLine(myReader["LastName"].ToString());
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Broke");
+            }
         }
 
-        private void butn_Delete_Click(object sender, EventArgs e)
+        private void btn_Delete_Click(object sender, EventArgs e)
         {
-            // save changes to the dataset 
-            bindingSource1.EndEdit();
-
-            int result = 0;
-
-            // return number of items updated
-            customerTableAdapter1.DeleteQuery(2);
-
-            result = customerTableAdapter1.Update(patClothesShopDataSet1.Customer);
-
-            // display the row has been updated
-            MessageBox.Show(result.ToString());
+            
         }
     }
 }
