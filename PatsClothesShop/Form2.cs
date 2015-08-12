@@ -38,12 +38,16 @@ namespace PatsClothesShop
             customerTableAdapter1.Fill(patClothesShopDataSet1.Customer);
         }
 
-        SqlConnection myConnection = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Stephen\Documents\VSProjects\csharp-db-app\PatsClothesShop\PatClothesShop.mdf;Integrated Security=True");
+       
 
         private void btn_Insert_Click(object sender, EventArgs e)
         {
+            // initialize a new instance of the SqlConnection class, containing the connection string
+            SqlConnection myConnection = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Stephen\Documents\VSProjects\csharp-db-app\PatsClothesShop\PatClothesShop.mdf;Integrated Security=True");
+
             try
             {
+                // open connection                
                 myConnection.Open();
                 Console.WriteLine("Connection"); ;
             }
@@ -52,17 +56,19 @@ namespace PatsClothesShop
                 Console.WriteLine("Error");
             }
 
+            // Initialize a new instance of the SqlCommand, query and SqlConnection instance
             SqlCommand myCommand = new SqlCommand("INSERT INTO Customer (FirstName, LastName) " +
-                                     "Values ('SteJ', 'OConnor')", myConnection);
+                                     "Values ('Stanis', 'Baratheon'), ('Ned', 'Stark'), ('Renly', 'Baratheon'), ('Ramsay', 'Bolton'), ('Cersei', 'Lannister'), ('SteJ', 'OConnor')", myConnection);
 
+            // executes a Transact-SQL statement against the connection and returns the number of rows affected
             myCommand.ExecuteNonQuery();
 
             try
-            {
-                SqlDataReader myReader = null;
+            {                 
                 SqlCommand myCommandSel = new SqlCommand("SELECT * FROM Customer",
                                                          myConnection);
-                myReader = myCommandSel.ExecuteReader();
+                // Initialize a new instance of SqlReader, sends the CommandText to the Connection and builds a SqlDataReader
+                SqlDataReader myReader = myCommandSel.ExecuteReader();
                 while (myReader.Read())
                 {
                     Console.WriteLine(myReader["FirstName"].ToString());
@@ -77,7 +83,38 @@ namespace PatsClothesShop
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+            SqlConnection myConnection = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Stephen\Documents\VSProjects\csharp-db-app\PatsClothesShop\PatClothesShop.mdf;Integrated Security=True");
+
+            try
+            {
+                myConnection.Open();
+                Console.WriteLine("Connection"); ;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error");
+            }
+
+            SqlCommand myCommandDel = new SqlCommand("DELETE FROM Customer WHERE CustomerID in(SELECT TOP 3 CustomerID FROM Customer ORDER BY CustomerID DESC)", myConnection);
+
+            myCommandDel.ExecuteNonQuery();
             
+            try
+            {
+                
+                SqlCommand myCommandSel = new SqlCommand("SELECT * FROM Customer",
+                                                         myConnection);
+                SqlDataReader myReader = myCommandSel.ExecuteReader();
+                while (myReader.Read())
+                {
+                    Console.WriteLine(myReader["FirstName"].ToString());
+                    Console.WriteLine(myReader["LastName"].ToString());
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Broke");
+            }
         }
     }
 }
