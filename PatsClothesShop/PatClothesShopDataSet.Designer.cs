@@ -564,6 +564,11 @@ namespace PatsClothesShop {
                 xs.Add(dsSchema);
                 return type;
             }
+
+            internal void RemoveCustomerRow()
+            {
+                throw new System.NotImplementedException();
+            }
         }
         
         /// <summary>

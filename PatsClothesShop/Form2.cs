@@ -38,9 +38,7 @@ namespace PatsClothesShop
 
             // display the row has been updated
             MessageBox.Show(result.ToString());
-        }
-
-             
+        }             
 
         private void btn_Insert_Click(object sender, EventArgs e)
         {           
@@ -52,19 +50,17 @@ namespace PatsClothesShop
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            bindingSource1.RemoveCurrent();
+            bindingSource1.RemoveCurrent();            
+            
             Update();
 
             MessageBox.Show("Name Deleted");
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
-        {
-            bindingSource1.DataSource = null;
+        {            
             textBox1.Clear();
-            textBox2.Clear();
-            patClothesShopDataSet1.RejectChanges();
-            bindingSource1.ResetBindings(false);
+            textBox2.Clear();           
         }
     }
 }

@@ -33,12 +33,10 @@
             System.Windows.Forms.Label firstNameLabel;
             System.Windows.Forms.Label lastNameLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.patClothesShopDataSet = new PatsClothesShop.PatClothesShopDataSet();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerTableAdapter = new PatsClothesShop.PatClothesShopDataSetTableAdapters.CustomerTableAdapter();
-            this.tableAdapterManager = new PatsClothesShop.PatClothesShopDataSetTableAdapters.TableAdapterManager();
             this.customerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patClothesShopDataSet = new PatsClothesShop.PatClothesShopDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -54,13 +52,15 @@
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.customerTableAdapter = new PatsClothesShop.PatClothesShopDataSetTableAdapters.CustomerTableAdapter();
+            this.tableAdapterManager = new PatsClothesShop.PatClothesShopDataSetTableAdapters.TableAdapterManager();
             customerIDLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.patClothesShopDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingNavigator)).BeginInit();
             this.customerBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patClothesShopDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // customerIDLabel
@@ -89,26 +89,6 @@
             lastNameLabel.Size = new System.Drawing.Size(61, 13);
             lastNameLabel.TabIndex = 5;
             lastNameLabel.Text = "Last Name:";
-            // 
-            // patClothesShopDataSet
-            // 
-            this.patClothesShopDataSet.DataSetName = "PatClothesShopDataSet";
-            this.patClothesShopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.patClothesShopDataSet;
-            // 
-            // customerTableAdapter
-            // 
-            this.customerTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CustomerTableAdapter = this.customerTableAdapter;
-            this.tableAdapterManager.UpdateOrder = PatsClothesShop.PatClothesShopDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // customerBindingNavigator
             // 
@@ -148,6 +128,16 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.patClothesShopDataSet;
+            // 
+            // patClothesShopDataSet
+            // 
+            this.patClothesShopDataSet.DataSetName = "PatClothesShopDataSet";
+            this.patClothesShopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -268,6 +258,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // customerTableAdapter
+            // 
+            this.customerTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CustomerTableAdapter = this.customerTableAdapter;
+            this.tableAdapterManager.UpdateOrder = PatsClothesShop.PatClothesShopDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,11 +284,11 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.patClothesShopDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingNavigator)).EndInit();
             this.customerBindingNavigator.ResumeLayout(false);
             this.customerBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patClothesShopDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -66,6 +66,6 @@ namespace PatsClothesShop
         {
             Form2 myForm = new Form2();
             myForm.Show();
-        }
+        } 
     }
 }
