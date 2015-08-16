@@ -1042,17 +1042,17 @@ namespace PatsClothesShop.PatClothesShopDataSetTableAdapters {
             return returnValue;
         }
 
+        internal void DeleteQuery(PatClothesShopDataSet.CustomerDataTable customerDataTable)
+        {
+            throw new System.NotImplementedException();
+        }
+
         internal void DeleteQuery(string p1, string p2)
         {
             throw new System.NotImplementedException();
         }
 
         internal void DeleteQuery()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        internal void InsertQuery(PatClothesShopDataSet.CustomerDataTable customerDataTable)
         {
             throw new System.NotImplementedException();
         }

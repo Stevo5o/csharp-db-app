@@ -30,18 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.patClothesShopDataSet1 = new PatsClothesShop.PatClothesShopDataSet();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.customerTableAdapter1 = new PatsClothesShop.PatClothesShopDataSetTableAdapters.CustomerTableAdapter();
-            this.tableAdapterManager1 = new PatsClothesShop.PatClothesShopDataSetTableAdapters.TableAdapterManager();
             this.btn_Insert = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableAdapterManager1 = new PatsClothesShop.PatClothesShopDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.patClothesShopDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -54,11 +55,6 @@
             this.listBox1.Size = new System.Drawing.Size(120, 95);
             this.listBox1.TabIndex = 0;
             this.listBox1.ValueMember = "CustomerID";
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "Customer";
-            this.bindingSource1.DataSource = this.patClothesShopDataSet1;
             // 
             // patClothesShopDataSet1
             // 
@@ -104,19 +100,13 @@
             // 
             this.customerTableAdapter1.ClearBeforeFill = true;
             // 
-            // tableAdapterManager1
-            // 
-            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager1.CustomerTableAdapter = this.customerTableAdapter1;
-            this.tableAdapterManager1.UpdateOrder = PatsClothesShop.PatClothesShopDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // btn_Insert
             // 
             this.btn_Insert.Location = new System.Drawing.Point(33, 188);
             this.btn_Insert.Name = "btn_Insert";
             this.btn_Insert.Size = new System.Drawing.Size(75, 23);
             this.btn_Insert.TabIndex = 5;
-            this.btn_Insert.Text = "Insert";
+            this.btn_Insert.Text = "Add";
             this.btn_Insert.UseVisualStyleBackColor = true;
             this.btn_Insert.Click += new System.EventHandler(this.btn_Insert_Click);
             // 
@@ -130,11 +120,34 @@
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Location = new System.Drawing.Point(172, 226);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancel.TabIndex = 7;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "Customer";
+            this.bindingSource1.DataSource = this.patClothesShopDataSet1;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.CustomerTableAdapter = null;
+            this.tableAdapterManager1.UpdateOrder = PatsClothesShop.PatClothesShopDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(373, 509);
+            this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Insert);
             this.Controls.Add(this.button1);
@@ -145,8 +158,8 @@
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patClothesShopDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +178,6 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button btn_Insert;
         private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.Button btn_Cancel;
     }
 }

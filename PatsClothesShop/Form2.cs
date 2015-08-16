@@ -19,6 +19,13 @@ namespace PatsClothesShop
             InitializeComponent();
         }
 
+        DataTable dt = new DataTable();
+        int i, j;
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            customerTableAdapter1.Fill(patClothesShopDataSet1.Customer);
+        }  
+
         private void button1_Click(object sender, EventArgs e)
         {
             // save changes to the dataset 
@@ -33,22 +40,31 @@ namespace PatsClothesShop
             MessageBox.Show(result.ToString());
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            customerTableAdapter1.Fill(patClothesShopDataSet1.Customer);
-        }       
+             
 
         private void btn_Insert_Click(object sender, EventArgs e)
-        {
+        {           
             bindingSource1.EndEdit();
-            patClothesShopDataSet1.Customer.AddCustomerRow("Yara", "Grayjoy");
+            patClothesShopDataSet1.Customer.AddCustomerRow(textBox1.Text, textBox2.Text);         
+            
             MessageBox.Show("Name Added");
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            patClothesShopDataSet1.Tables["Customer"].Rows[0].Delete();
+            bindingSource1.RemoveCurrent();
+            Update();
+
             MessageBox.Show("Name Deleted");
+        }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            bindingSource1.DataSource = null;
+            textBox1.Clear();
+            textBox2.Clear();
+            patClothesShopDataSet1.RejectChanges();
+            bindingSource1.ResetBindings(false);
         }
     }
 }
