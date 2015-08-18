@@ -55,9 +55,9 @@
             this.listBox1.DataSource = this.bindingSource1;
             this.listBox1.DisplayMember = "LastName";
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(64, 72);
+            this.listBox1.Location = new System.Drawing.Point(38, 72);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.Size = new System.Drawing.Size(134, 95);
             this.listBox1.TabIndex = 0;
             this.listBox1.ValueMember = "CustomerID";
             // 
@@ -74,17 +74,17 @@
             // textBox1
             // 
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "FirstName", true));
-            this.textBox1.Location = new System.Drawing.Point(206, 72);
+            this.textBox1.Location = new System.Drawing.Point(197, 72);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(141, 20);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "LastName", true));
-            this.textBox2.Location = new System.Drawing.Point(206, 115);
+            this.textBox2.Location = new System.Drawing.Point(197, 115);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(141, 20);
             this.textBox2.TabIndex = 2;
             // 
             // label1
@@ -98,7 +98,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(231, 188);
+            this.button1.Location = new System.Drawing.Point(238, 188);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -112,7 +112,7 @@
             // 
             // btn_Insert
             // 
-            this.btn_Insert.Location = new System.Drawing.Point(67, 188);
+            this.btn_Insert.Location = new System.Drawing.Point(54, 188);
             this.btn_Insert.Name = "btn_Insert";
             this.btn_Insert.Size = new System.Drawing.Size(75, 23);
             this.btn_Insert.TabIndex = 5;
@@ -122,7 +122,7 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(67, 226);
+            this.btn_Delete.Location = new System.Drawing.Point(54, 226);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(75, 23);
             this.btn_Delete.TabIndex = 6;
@@ -132,7 +132,7 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(231, 226);
+            this.btn_Cancel.Location = new System.Drawing.Point(238, 226);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancel.TabIndex = 7;
@@ -156,7 +156,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.customerDataGridView.DataSource = this.bindingSource1;
-            this.customerDataGridView.Location = new System.Drawing.Point(38, 357);
+            this.customerDataGridView.Location = new System.Drawing.Point(38, 277);
             this.customerDataGridView.Name = "customerDataGridView";
             this.customerDataGridView.Size = new System.Drawing.Size(300, 220);
             this.customerDataGridView.TabIndex = 8;
@@ -184,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 613);
+            this.ClientSize = new System.Drawing.Size(380, 526);
             this.Controls.Add(this.customerDataGridView);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Delete);

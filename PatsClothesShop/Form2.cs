@@ -18,9 +18,7 @@ namespace PatsClothesShop
         {
             InitializeComponent();
         }
-
-        DataTable dt = new DataTable();
-        int i, j;
+           
         private void Form2_Load(object sender, EventArgs e)
         {
             customerTableAdapter1.Fill(patClothesShopDataSet1.Customer);
@@ -43,6 +41,8 @@ namespace PatsClothesShop
         private void btn_Insert_Click(object sender, EventArgs e)
         {           
             bindingSource1.EndEdit();
+
+            // add textBox info to dataset
             patClothesShopDataSet1.Customer.AddCustomerRow(textBox1.Text, textBox2.Text);         
             
             MessageBox.Show("Name Added");
@@ -50,8 +50,8 @@ namespace PatsClothesShop
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            bindingSource1.RemoveCurrent();            
-            
+            // remove current selected row
+            bindingSource1.RemoveCurrent();
             Update();
 
             MessageBox.Show("Name Deleted");
