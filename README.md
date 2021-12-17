@@ -1,4 +1,4 @@
-# csharp-db-app
+# C# databases Application
 ## Build a basic C# database application ##
 - Databinding
 - ADO.NET
