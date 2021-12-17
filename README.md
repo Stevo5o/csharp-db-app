@@ -1,4 +1,4 @@
-# C# databases Application
+# C# database Application
 ## Build a basic C# database application ##
 - Databinding
 - ADO.NET
